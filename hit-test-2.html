@@ -34,7 +34,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <body>
     <header>
       <details open>
-        <summary>Hit Test</summary>
+        <summary>Hit Test 7</summary>
         <p>
           This sample demonstrates use of hit testing to place virtual objects on real-world surfaces.
           <a class="back" href="./">Back</a>
@@ -67,8 +67,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       arObject.visible = false;
       scene.addNode(arObject);
 
-      let flower = new Gltf2Node({url: 'media/gltf/bubble/bubblee.gltf'});
-      arObject.addNode(flower);
+      try{
+        let flower = new Gltf2Node({url: 'media/gltf/bubble/model.gltf'});
+        arObject.addNode(flower);
+      }
+      catch(ex){
+        alert(ex.message);
+      }
 
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
       reticle.visible = false;
