@@ -1,16 +1,16 @@
 @font-face {
   font-family: "strauss-light";
-  src: url("../../../../../sites/default/files/strauss/assets/fonts/strauss-font/Strauss-Light.ttf");
+  src: url("./Strauss-Light.ttf");
 }
 
 @font-face {
   font-family: "strauss-regular";
-  src: url("../../../../../sites/default/files/strauss/assets/fonts/strauss-font/Strauss-Regular.ttf");
+  src: url("./Strauss-Regular.ttf");
 }
 
 @font-face {
   font-family: "strauss-bold";
-  src: url("../../../../../sites/default/files/strauss/assets/fonts/strauss-font/Strauss-Bold.ttf");
+  src: url("./Strauss-Bold.ttf");
 }
 
 body {
