@@ -82,7 +82,7 @@
 	</script>
 	
 	<script type="module">
-		import {WebXRButton} from './js/util/webxr-button.js';
+		import {WebXRButtonStrauss} from './js/util/webxr-button-strauss.js';
 		import {Scene} from './js/render/scenes/scene.js';
 		import {Renderer, createWebGLContext} from './js/render/core/renderer.js';
 		import {Node} from './js/render/core/node.js';
@@ -132,14 +132,14 @@
 		scene.clear = false;
   
 		function initXR() {
-		  xrButton = new WebXRButton({
+		  xrButton = new WebXRButtonStrauss({
 			onRequestSession: onRequestSession,
 			onEndSession: onEndSession,
 			textEnterXRTitle: "START AR",
 			textXRNotFoundTitle: "AR NOT FOUND",
 			textExitXRTitle: "EXIT  AR",
 		  });
-		  document.querySelector('header').appendChild(xrButton.domElement);
+		  document.querySelector('#imagePlaceholder').appendChild(xrButton.domElement);
   
 		  if (navigator.xr) {
 			navigator.xr.isSessionSupported('immersive-ar')
@@ -257,9 +257,18 @@
   
 		  scene.endFrame();
 		}
-  
-		// Start the XR application.
-		initXR();
+
+
+		const a = document.createElement("a");
+		if (a.relList.supports("ar")) {
+			// AR is available.
+
+		}
+		else{
+			// Start the XR application.
+			initXR();
+		}
+		
 	  </script>
     <link media="all" href="./StraussWater_files/autoptimize_83d78d1b623c7aa7ccc4fe301b1ef96b.css" rel="stylesheet">
     <title>Strauss Water</title>
@@ -533,7 +542,7 @@
                     <div class="container old_container">
                         <div id="single_brand_page">
                             <div class="waypoint slide_1"></div>
-                            <div class="waypoint slide_2"></div>
+                            <div class="waypoint slide_2"><h1>Look at our products in AR</h1></div>
                             <div class="brand_part_wrap row_fluid" id="products"> <span class="brand_area_title background" style="margin-bottom: 6px; "> Variety of Products </span>
                                 <div class="grey-f2" style="padding: 35px; ">
                                     <div class="tab-content brand_items_content">
@@ -545,12 +554,12 @@
                                             </div>
                                         </div>
                                         <div id="857_0" class="tab-pane active" aria-hidden="false">
-                                            <div class="brand_item_picture"> <img alt="" src="./StraussWater_files/16623_22316_tami4_bar_bubbles_plus_black_446X303-1.jpg" style="height: 302px; width: 446px;"></div>
+                                            <div class="brand_item_picture" id="imagePlaceholder"> <!--<img alt="" src="./StraussWater_files/16623_22316_tami4_bar_bubbles_plus_black_446X303-1.jpg" style="height: 302px; width: 446px;">--></div>
                                             <div class="brand_item_text">
                                                 <div class="brand_item_title background">Bubble PLUS</div>
                                                 <div class="brand_item_desc">
                                                     <div class="brand_item_sub_title">
-														<h1>Augmented Reality Preview</h1>
+														<h2>Augmented Reality Preview</h2>
 														<a href="media/usdz/bubble5.usdz" rel="ar">Click here if you are using Safari on iPhone or iPad</a>
 														<br>
 													</div>
