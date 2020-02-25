@@ -1744,11 +1744,12 @@ body.INDmodalOpen{
 				const a = document.createElement("a");
 				if (a.relList.supports("ar")) {
 					// AR is available.
-					document.querySelector('#linkARQuickLook').style.visibility = 'hidden';
+					
 				}
 				else{
 					// Start the XR application.
 					initXR();
+					document.querySelector('#linkARQuickLook').style.visibility = 'hidden';
 				}
 				
 
